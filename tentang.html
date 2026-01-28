@@ -1,11 +1,232 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Creative Portofolio | About Me & Project</title>
+    <style>
+        /* RESET & BASE STYLES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 30px;
+            font-size: 2rem;
+            color: #2d3436;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 4px;
+            background: #6c63ff;
+            display: block;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        /* 1. ABOUT CARD (Hero) */
+        .about-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
+        }
+
+        .about-img-side {
+            flex: 1;
+            background: linear-gradient(45deg, #6c63ff, #4834d4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            min-width: 300px;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.3);
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1.5;
+            padding: 40px;
+        }
+
+        .about-content h1 { font-size: 2.2rem; margin-bottom: 5px; }
+        .about-content h3 { color: #6c63ff; font-weight: 500; margin-bottom: 15px; }
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 15px; }
+        .tag { background: #f0f0ff; color: #6c63ff; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+
+        /* 2. TIMELINE SECTION */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #ddd;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #6c63ff;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #6c63ff;
+        }
+
+        .timeline-date { font-weight: bold; color: #6c63ff; font-size: 0.9rem; }
+        .timeline-box { background: white; padding: 15px 20px; border-radius: 10px; margin-top: 5px; box-shadow: 0 3px 10px rgba(0,0,0,0.03); }
+
+        /* 3. PROJECT GALLERY */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .project-img { width: 100%; height: 180px; background: #ddd; object-fit: cover; }
+        .project-info { padding: 20px; }
+        .project-info h4 { margin-bottom: 10px; }
+        .project-info p { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
+        .btn-view { font-size: 0.8rem; color: #6c63ff; text-decoration: none; font-weight: bold; border: 1px solid #6c63ff; padding: 5px 15px; border-radius: 5px; transition: 0.3s; }
+        .btn-view:hover { background: #6c63ff; color: white; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .about-card { flex-direction: column; }
+            .container { padding: 10px; margin: 20px auto; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Ini halaman Tentang</h1>
+
+    <div class="container">
+        
+        <div class="about-card">
+            <div class="about-img-side">
+                <img src="WhatsApp Image 2026-01-28 at 21.13.54.jpeg" alt="Foto Profil" class="profile-pic">
+            </div>
+            <div class="about-content">
+                <h1>Halo, Saya Fariz Azka Zein</h1>
+                <h3>Fullstack Developer</h3>
+                <p>Saya adalah seorang pengembang web dan iot yang antusias menciptakan solusi nyata dan digital kreatif. Berfokus pada performa kode dan pengalaman pengguna yang intuitif.</p>
+                <div class="tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">Javascript</span>
+                    <span class="tag">Arduino IDE</span>
+                    <span class="tag">UI Design</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Pengalaman & Pendidikan</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2022 - Sekarang</div>
+                <div class="timeline-box">
+                    <h4>Web Designer</h4>
+                    <p>Bekerja di Perusahaan...</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2020 - 2022</div>
+                <div class="timeline-box">
+                    <h4>Web dan Iot Developer</h4>
+                    <p>Mengembangkan interface aplikasi mobile berbasis web dan perangkat pintar iot.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2018 - 2020</div>
+                <div class="timeline-box">
+                    <h4>Software and Hardware Specialization</h4>
+                    <p>Meminati proyek yang menggabungkan perangkat lunak dan keras.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Project Terbaru</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="download.webp" alt="Project 1" class="project-img">
+                <div class="project-info">
+                    <h4>E-Commerce App</h4>
+                    <p>Aplikasi toko online dengan sistem integrasi payment gateway dan pelacakan stok otomatis.</p>
+                    <a href="#" class="btn-view">Lihat Detail</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="th.webp" alt="Project 2" class="project-img">
+                <div class="project-info">
+                    <h4>Personal Finance Tracker</h4>
+                    <p>Dashboard untuk memantau pengeluaran bulanan dengan visualisasi grafik interaktif.</p>
+                    <a href="#" class="btn-view">Lihat Detail</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="download (1).webp" alt="Project 3" class="project-img">
+                <div class="project-info">
+                    <h4>Iot Project</h4>
+                    <p>IoT adalah jaringan perangkat fisik yang saling terhubung melalui internet, seperti sensor, kamera, lampu pintar, dan speaker pintar. Tujuannya adalah membuat hidup lebih efisien dengan otomatisasi dan kontrol jarak jauh.</p>
+                    <a href="#" class="btn-view">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>

@@ -1,11 +1,229 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Creative Portofolio | Work Me</title>
+    <style>
+        /* CSS RESET & BASE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 40px 20px;
+        }
+
+        .work-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .work-header h1 {
+            font-size: 2.5rem;
+            color: #2d3436;
+        }
+
+        /* FILTER BUTTONS */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border: none;
+            background: #fff;
+            color: #6c63ff;
+            border: 2px solid #6c63ff;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: #6c63ff;
+            color: #fff;
+        }
+
+        /* WORK GRID */
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .work-item {
+            position: relative;
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* IMAGE HOVER EFFECT */
+        .work-img-container {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .work-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .work-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(108, 99, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: 0.4s;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .work-item:hover .work-overlay {
+            opacity: 1;
+        }
+
+        .work-item:hover .work-img-container img {
+            transform: scale(1.1);
+        }
+
+        .work-info {
+            padding: 20px;
+        }
+
+        .work-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .work-info span {
+            font-size: 0.85rem;
+            color: #6c63ff;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .btn-link {
+            margin-top: 15px;
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-link:hover {
+            background: white;
+            color: #6c63ff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .filter-container {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>HALAMAN WORK</h1>
+
+    <section class="work-header">
+        <span>Portfolio Terkini</span>
+        <h1>Karya Terbaik Saya</h1>
+    </section>
+
+    <div class="filter-container">
+        <button class="filter-btn active">Semua</button>
+        <button class="filter-btn">Web App</button>
+        <button class="filter-btn">UI/UX</button>
+        <button class="filter-btn">Mobile</button>
+        <button class="filter-btn">Arduino IDE</button>
+    </div>
+
+    <div class="work-grid">
+        
+        <div class="work-item">
+            <div class="work-img-container">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=500" alt="Dashboard App">
+                <div class="work-overlay">
+                    <p>Membangun sistem analitik data yang interaktif dengan integrasi API.</p>
+                    <a href="#" class="btn-link">Lihat Demo</a>
+                </div>
+            </div>
+            <div class="work-info">
+                <span>Web Application</span>
+                <h3>Admin Data Dashboard</h3>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-img-container">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&q=80&w=500" alt="Coffee App">
+                <div class="work-overlay">
+                    <p>Desain aplikasi pemesanan kopi modern dengan fokus pada user experience.</p>
+                    <a href="#" class="btn-link">Studi Kasus</a>
+                </div>
+            </div>
+            <div class="work-info">
+                <span>UI/UX Design</span>
+                <h3>Coffee Shop App</h3>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-img-container">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=500" alt="Portfolio Site">
+                <div class="work-overlay">
+                    <p>Website portofolio responsif menggunakan HTML5, CSS3, dan GSAP Animation.</p>
+                    <a href="#" class="btn-link">GitHub Repo</a>
+                </div>
+            </div>
+            <div class="work-info">
+                <span>Web Development</span>
+                <h3>Personal Brand Site</h3>
+            </div>
+        </div>
+
+        <div class="work-item">
+            <div class="work-img-container">
+                <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=500" alt="Branding Project">
+                <div class="work-overlay">
+                    <p>Identitas visual lengkap untuk startup fintech berbasis di Jakarta.</p>
+                    <a href="#" class="btn-link">Lihat Hasil</a>
+                </div>
+            </div>
+            <div class="work-info">
+                <span>Branding</span>
+                <h3>Fintech Visual Identity</h3>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>

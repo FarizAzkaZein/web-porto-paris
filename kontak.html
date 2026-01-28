@@ -1,12 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Creative Portofolio | Contact Me</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .contact-container {
+            background: white;
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        /* Sisi Informasi Kontak */
+        .contact-info {
+            flex: 1;
+            background: #6c63ff;
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-width: 300px;
+        }
+
+        .contact-info h2 { font-size: 2rem; margin-bottom: 20px; }
+        .contact-info p { opacity: 0.9; margin-bottom: 30px; }
+
+        .info-details div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            background: rgba(255,255,255,0.2);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover { background: white; color: #6c63ff; }
+
+        /* Sisi Form */
+        .contact-form {
+            flex: 1.5;
+            padding: 40px;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: 0.3s;
+            background: #fdfdfd;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #6c63ff;
+            box-shadow: 0 0 8px rgba(108, 99, 255, 0.2);
+        }
+
+        .btn-send {
+            width: 100%;
+            padding: 15px;
+            background: #6c63ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-send:hover {
+            background: #554edb;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .contact-container { flex-direction: column; }
+            .contact-info { padding: 30px; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Kontak Kami</h1>
-    <p>Untuk informasi lebih lanjut, silakan hubungi kami melalui email di</p>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <div>
+                <h2>Mari Berdiskusi</h2>
+                <p>Punya ide menarik atau sekadar ingin menyapa? Silakan hubungi saya melalui form atau media sosial.</p>
+                
+                <div class="info-details">
+                    <div>
+                        <span>📍</span>
+                        <span>Medan, Indonesia</span>
+                    </div>
+                    <div>
+                        <span>📧</span>
+                        <span>farizazkazein01@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#">In</a>
+                <a href="#">Gh</a>
+                <a href="#">Ig</a>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <form action="#">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" placeholder="Masukkan nama anda..." required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="email@contoh.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Pesan</label>
+                    <textarea rows="5" placeholder="Tuliskan pesan anda di sini..." required></textarea>
+                </div>
+                <button type="submit" class="btn-send">Kirim Pesan</button>
+            </form>
+        </div>
+    </div>
+
 </body>
 </html>
